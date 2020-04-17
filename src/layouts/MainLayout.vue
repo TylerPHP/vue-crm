@@ -1,5 +1,6 @@
 <template>
-<div class="app-main-layout">
+<Loader v-if="loading"/>
+<div v-else class="app-main-layout">
 
     <Navbar @click="isOpen = !isOpen"/>
 
@@ -20,24 +21,27 @@
 </template>
 
 <script>
-    import Navbar from "../components/app/Navbar.vue";
-    import Sidebar from "../components/app/Sidebar.vue";
+import Navbar from "../components/app/Navbar.vue";
+import Sidebar from "../components/app/Sidebar.vue";
 
-    export default {
-        name: "MainLayout",
-        data: () => ({
-            isOpen: true
-        }),
-        async mounted() {
-            if (!Object.keys(this.$store.getters.info).length) {
-              await  this.$store.dispatch('fetchInfo')
-            }
-        },
-        components:{
-            Navbar,
-            Sidebar
+export default {
+    name: "MainLayout",
+    data: () => ({
+        isOpen: true,
+        loading: true
+    }),
+    async mounted() {
+        if (!Object.keys(this.$store.getters.info).length) {
+          await  this.$store.dispatch('fetchInfo')
         }
+
+        this.loading = false
+    },
+    components:{
+        Navbar,
+        Sidebar
     }
+}
 </script>
 
 <style scoped>
