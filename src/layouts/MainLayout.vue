@@ -29,7 +29,7 @@
             isOpen: true
         }),
         async mounted() {
-            if (this.$store.getters.info) {
+            if (!Object.keys(this.$store.getters.info).length) {
               await  this.$store.dispatch('fetchInfo')
             }
         },
