@@ -19,7 +19,7 @@
                             class="helper-text invalid"
                     >
                   Введите название категории
-              </span>
+                    </span>
                 </div>
 
                 <div class="input-field">
@@ -35,7 +35,7 @@
                             class="helper-text invalid"
                     >
                   Минимальная значение {{ $v.limit.$params.minValue.min }}
-              </span>
+                    </span>
                 </div>
 
                 <button class="btn waves-effect waves-light" type="submit">
@@ -72,7 +72,7 @@
                 }
 
                 try {
-                  // eslint-disable-next-line no-unused-vars
+                    // eslint-disable-next-line no-unused-vars
                     const category = await this.$store.dispatch('createCategory', {
                         title: this.title,
                         limit: this.limit
@@ -83,8 +83,7 @@
                     this.$message('Категория была создана')
                     this.$emit('created', category)
                     // eslint-disable-next-line no-empty
-                } catch (e) {
-                }
+                } catch (e) {}
 
             }
         }
