@@ -150,7 +150,7 @@
                  type: this.type,
                  date: new Date().toJSON()
                })
-                  const  bill = this.type === 'income' ? this.info.bill + this.amount
+                  //const  bill = this.type === 'income' ? this.info.bill + this.amount
                    // eslint-disable-next-line no-empty
                } catch (e) {}
 
