@@ -125,7 +125,6 @@
         },
         computed: {
           ...mapGetters(['info']),
-
           canCreateRecord() {
             if (this.type === 'income'){
               return true
@@ -140,24 +139,20 @@
                     this.$v.$touch()
                     return
                 }
-
              if (this.canCreateRecord) {
-                 console.log( 'ok')
                try {
                  await this.$store.dispatch('createRecord', {
-                 categoryId: this.categoryId,
+                 categoryId: this.category,
                  amount: this.amount,
                  description: this.description,
                  type: this.type,
                  date: new Date().toJSON()
                })
 
-
                    // eslint-disable-next-line no-unused-vars
                   const  bill = this.type === 'income'
                       ? this.info.bill + this.amount
                       : this.info.bill - this.amount
-
 
                    await this.$store.dispatch('updateInfo', {bill})
                    this.$message('Запись успешно создана')
@@ -168,6 +163,7 @@
                } catch (e) {}
 
              } else {
+
                this.$message(`Недостаточно свредств на счете (${this.amount - this.info.bill})`)
              }
           }

@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+
 export default {
     state: {
         info: {}
@@ -17,7 +18,7 @@ export default {
                 const uid = await dispatch('getUid')
                 const updateData = {...getters.info, ...toUpdate}
                 await firebase.database().ref(`/users/${uid}/info`).update(toUpdate)
-                  commit('setInfo', updateData)
+                commit('setInfo', updateData)
             } catch (e) {
                   commit('setError', e)
                   throw e
