@@ -5,7 +5,7 @@
       <div class="breadcrumb-wrap">
         <router-link to="/history" class="breadcrumb">История</router-link>
         <a @click.prevent class="breadcrumb">
-          {{ record.type === 'income' ? 'Доход' : 'Расход' }}
+          {{ record.type === 'income' ? consumption : income }}
         </a>
       </div>
       <div class="row">
@@ -33,9 +33,12 @@
 </template>
 
 <script>
+  import localizeFilter from "../filters/localize.filter";
 export default {
   name: 'DetailRecord',
   data: () => ({
+    consumption: localizeFilter('History_Consumption'),
+    income: localizeFilter('History_Income'),
     record: null,
     loading: true,
   }),
