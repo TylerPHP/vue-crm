@@ -15,7 +15,7 @@
       <router-link
         class="btn-floating btn-large blue"
         to="/record"
-        v-tooltip="'Создать новую звпись'"
+        v-tooltip="addPost"
       >
         <i class="large material-icons">add</i>
       </router-link>
@@ -27,10 +27,12 @@
 import Navbar from '../components/app/Navbar.vue'
 import Sidebar from '../components/app/Sidebar.vue'
 import messages from '../utils/messages'
+import localizeFilter from "../filters/localize.filter";
 
 export default {
   name: 'MainLayout',
   data: () => ({
+    addPost: '',
     isOpen: true,
     loading: true,
   }),
@@ -38,6 +40,7 @@ export default {
     if (!Object.keys(this.$store.getters.info).length) {
       await this.$store.dispatch('fetchInfo')
     }
+    this.addPost = localizeFilter('Сreate_New_Record')
 
     this.loading = false
   },

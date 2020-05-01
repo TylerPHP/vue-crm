@@ -26,5 +26,11 @@
   "History_Category": "Category",
   "History_Type": "Type",
   "History_Open": "Open",
-  "History_View_Record": "View record"
+  "History_View_Record": "View record",
+  "Planning_Plan": "Planning",
+  "Planning_No_Categories": "No categories yet.",
+  "Planning_Add_New_Category": "Add new category",
+  "Planning_Excess_By": "Excess by",
+  "Planing_Left": "Left",
+  "Сreate_New_Record": "Create new record"
 }

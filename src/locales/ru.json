@@ -11,9 +11,9 @@
   "Home_Bill": "Счет",
   "Home_Bill_Currency": "Счет в валюте",
   "Home_Exchange_Rates": "Курс валют",
-  "Home_currency": "Валюта",
-  "Home_course": "Курс",
-  "Home_date": "Дата",
+  "Home_Currency": "Валюта",
+  "Home_Course": "Курс",
+  "Home_Date": "Дата",
   "History_Record" : "История записей",
   "History_No_Posts": "Записей пока нет.",
   "History_Add_First": "Добавьте первую",
@@ -26,5 +26,11 @@
   "History_Category": "Категория",
   "History_Type": "Тип",
   "History_Open": "Открыть",
-  "History_View_Record": "Посмотреть запись"
+  "History_View_Record": "Посмотреть запись",
+  "Planning_Plan": "Планирование",
+  "Planning_No_Categories": "Категорий пока нету",
+  "Planning_Add_New_Category": "Добавить новую категорию",
+  "Planning_Excess_By": "Превышение на",
+  "Planing_Left": "Осталось",
+  "Сreate_New_Record": "Создать новую запись"
 }
