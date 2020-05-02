@@ -3,7 +3,7 @@
   <div v-else class="app-main-layout">
     <Navbar @click="isOpen = !isOpen" />
 
-    <Sidebar v-model="isOpen" :key="locale"/>
+    <Sidebar v-model="isOpen" :key="locale" />
 
     <main class="app-content" :class="{ full: !isOpen }">
       <div class="app-page">
@@ -27,7 +27,7 @@
 import Navbar from '../components/app/Navbar.vue'
 import Sidebar from '../components/app/Sidebar.vue'
 import messages from '../utils/messages'
-import localizeFilter from "../filters/localize.filter";
+import localizeFilter from '../filters/localize.filter'
 
 export default {
   name: 'MainLayout',
@@ -40,7 +40,7 @@ export default {
     if (!Object.keys(this.$store.getters.info).length) {
       await this.$store.dispatch('fetchInfo')
     }
-    this.addPost = localizeFilter('Сreate_New_Record')
+    this.addPost = localizeFilter('Create_New_Record')
 
     this.loading = false
   },
@@ -54,13 +54,13 @@ export default {
     },
     locale() {
       return this.$store.getters.info.locale
-    }
+    },
   },
   watch: {
     error(fbError) {
       this.$error(messages[fbError.code] || 'Что-то пошло не так')
-    }
-  },
+    },
+  }
 }
 </script>
 

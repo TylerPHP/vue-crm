@@ -8,7 +8,7 @@
     <Loader v-if="loading" />
 
     <p class="center" v-else-if="!categories.length">
-      {{ "Planning_No_Categories" | localize }}
+      {{ "No_Categories" | localize }}
       <router-link to="/categories">{{ "Planning_Add_New_Category" | localize }}</router-link>
     </p>
 

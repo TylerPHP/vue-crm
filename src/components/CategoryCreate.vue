@@ -2,7 +2,7 @@
   <div class="col s12 m6">
     <div>
       <div class="page-subtitle">
-        <h4>Создать</h4>
+        <h4>{{ "Create" | localize }}</h4>
       </div>
 
       <form @submit.prevent="submitHandler">
@@ -13,12 +13,12 @@
             v-model="title"
             :class="{ invalid: $v.title.$dirty && !$v.title.required }"
           />
-          <label for="name">Название</label>
+          <label for="name">{{ "Category_Name" | localize }}</label>
           <span
             v-if="$v.title.$dirty && !$v.title.required"
             class="helper-text invalid"
           >
-            Введите название категории
+            {{ "Category_Enter_Name" | localize }}
           </span>
         </div>
 
@@ -29,17 +29,17 @@
             v-model.number="limit"
             :class="{ invalid: $v.limit.$dirty && !$v.limit.minValue }"
           />
-          <label for="limit">Лимит</label>
+          <label for="limit">{{ "Category_limit" | localize }}</label>
           <span
             v-if="$v.limit.$dirty && !$v.limit.minValue"
             class="helper-text invalid"
           >
-            Минимальная значение {{ $v.limit.$params.minValue.min }}
+            {{ "Category_Minimum_Value" | localize }} {{ $v.limit.$params.minValue.min }}
           </span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">
-          Создать
+          {{ "Create" | localize }}
           <i class="material-icons right">send</i>
         </button>
       </form>
@@ -49,6 +49,7 @@
 
 <script>
 import { required, minValue } from 'vuelidate/lib/validators'
+import localizeFilter from "../filters/localize.filter";
 
 export default {
   name: 'CategoryCreate',
@@ -80,7 +81,7 @@ export default {
         this.title = ''
         this.limit = 100
         this.$v.$reset()
-        this.$message('Категория была создана')
+        this.$message(localizeFilter('Category_Was_Created'))
         this.$emit('created', category)
         // eslint-disable-next-line no-empty
       } catch (e) {}
