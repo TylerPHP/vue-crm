@@ -36,6 +36,11 @@
   import localizeFilter from "../filters/localize.filter";
 export default {
   name: 'DetailRecord',
+  metaInfo() {
+    return {
+      title: this.$title('Detail_Title')
+    }
+  },
   data: () => ({
     consumption: localizeFilter('History_Consumption'),
     income: localizeFilter('History_Income'),

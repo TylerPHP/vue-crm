@@ -1,9 +1,11 @@
 {
   "Profile_title": "Профиль",
+  "Login": "Логин",
   "Log_Off": "Выйти",
   "Message_EnterName": "Введите имя",
   "Update": "Обновить",
   "Name": "Имя",
+  "Detail_Title": "Запись",
   "Menu_Bill": "Счет",
   "Menu_History": "История",
   "Menu_Planning": "Планирование",

@@ -1,9 +1,11 @@
 {
   "Profile_title": "Profile",
+  "Login": "Login",
   "Log_Off": "Log off",
   "Message_EnterName": "Enter name",
   "Name": "Name",
   "Update": "Update",
+  "Detail_Title": "Detail",
   "Menu_Bill": "Bill",
   "Menu_History": "History",
   "Menu_Planning": "Planning",

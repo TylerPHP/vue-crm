@@ -3,7 +3,7 @@
   <div v-else class="app-main-layout">
     <Navbar @click="isOpen = !isOpen" />
 
-    <Sidebar v-model="isOpen" :key="locale" />
+    <Sidebar v-model="isOpen" :key="locale"/>
 
     <main class="app-content" :class="{ full: !isOpen }">
       <div class="app-page">
@@ -11,11 +11,11 @@
       </div>
     </main>
 
-    <div class="fixed-action-btn">
+    <div class="fixed-action-btn" :key="locale + '1'">
       <router-link
         class="btn-floating btn-large blue"
         to="/record"
-        v-tooltip="addPost"
+        v-tooltip="'Create_New_Record'"
       >
         <i class="large material-icons">add</i>
       </router-link>
@@ -27,12 +27,10 @@
 import Navbar from '../components/app/Navbar.vue'
 import Sidebar from '../components/app/Sidebar.vue'
 import messages from '../utils/messages'
-import localizeFilter from '../filters/localize.filter'
 
 export default {
   name: 'MainLayout',
   data: () => ({
-    addPost: '',
     isOpen: true,
     loading: true,
   }),
@@ -40,7 +38,6 @@ export default {
     if (!Object.keys(this.$store.getters.info).length) {
       await this.$store.dispatch('fetchInfo')
     }
-    this.addPost = localizeFilter('Create_New_Record')
 
     this.loading = false
   },
@@ -54,13 +51,13 @@ export default {
     },
     locale() {
       return this.$store.getters.info.locale
-    },
+    }
   },
   watch: {
     error(fbError) {
       this.$error(messages[fbError.code] || 'Что-то пошло не так')
-    },
-  }
+    }
+  },
 }
 </script>
 

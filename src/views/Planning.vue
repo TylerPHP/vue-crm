@@ -37,6 +37,11 @@ import localizeFilter from "../filters/localize.filter";
 
 export default {
   name: 'Planning',
+  metaInfo() {
+    return {
+      title: this.$title('Planning_Plan')
+    }
+  },
   data: () => ({
     loading: true,
     categories: [],
@@ -68,9 +73,7 @@ export default {
 
       const tooltipValue = cat.limit - spend
       const tooltip = `${
-        tooltipValue < 0
-                ? localizeFilter('Planning_Excess_By')
-                : localizeFilter('Planing_Left')
+        tooltipValue < 0 ? localizeFilter('Planning_Excess_By') : localizeFilter('Planing_Left')
       } ${currencyFilter(Math.abs(tooltipValue))}`
 
       return {

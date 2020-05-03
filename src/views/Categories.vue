@@ -25,6 +25,11 @@ import CategoryCreate from '../components/CategoryCreate'
 import CategoryEdit from '../components/CategoryEdit'
 export default {
   name: 'Categories.vue',
+  metaInfo() {
+    return {
+      title: this.$title('Menu_Categories')
+    }
+  },
   data: () => ({
     categories: [],
     loading: true,
