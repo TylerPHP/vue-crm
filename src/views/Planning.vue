@@ -16,9 +16,9 @@
       <div v-for="cat of categories" :key="cat.id">
         <p>
           <strong>{{ cat.title }}</strong>
-          {{ cat.spend | currency }} из {{ cat.limit | currency }}
+          {{ cat.spend | currency }} {{'Of'|localize}} {{ cat.limit | currency }}
         </p>
-        <div class="progress" v-tooltip="cat.tooltip">
+        <div class="progress" v-tooltip.noloc="cat.tooltip">
           <div
             class="determinate"
             :class="[cat.progressColor]"
@@ -33,7 +33,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import currencyFilter from '../filters/currency.filter'
-import localizeFilter from "../filters/localize.filter";
+import localizeFilter from '../filters/localize.filter'
 
 export default {
   name: 'Planning',
@@ -50,13 +50,10 @@ export default {
     ...mapGetters(['info']),
   },
   async mounted() {
-    // eslint-disable-next-line no-unused-vars
     const records = await this.$store.dispatch('fetchRecords')
-    // eslint-disable-next-line no-unused-vars
     const categories = await this.$store.dispatch('fetchCategories')
 
     this.categories = categories.map((cat) => {
-      // eslint-disable-next-line no-unused-vars
       const spend = records
         .filter((r) => r.categoryId === cat.id)
         .filter((r) => r.type === 'outcome')
@@ -65,23 +62,23 @@ export default {
         }, 0)
 
       const percent = (100 * spend) / cat.limit
-      // eslint-disable-next-line no-unused-vars
       const progressPercent = percent > 100 ? 100 : percent
-      // eslint-disable-next-line no-unused-vars
-      const progressColor =
-        percent < 60 ? 'green' : percent < 100 ? 'yellow' : 'red'
+      const progressColor =percent < 60 ? 'green' : percent < 100 ? 'yellow' : 'red'
 
       const tooltipValue = cat.limit - spend
       const tooltip = `${
-        tooltipValue < 0 ? localizeFilter('Planning_Excess_By') : localizeFilter('Planing_Left')
+        tooltipValue < 0 ? localizeFilter("Planning_Excess_By") : localizeFilter("Planing_Left")
       } ${currencyFilter(Math.abs(tooltipValue))}`
+
+      // // eslint-disable-next-line no-debugger
+      // debugger
 
       return {
         ...cat,
         progressPercent,
         progressColor,
         spend,
-        tooltip,
+        tooltip
       }
     })
 
