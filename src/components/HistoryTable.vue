@@ -37,13 +37,11 @@
 </template>
 
 <script>
-
-import localizeFilter from "../filters/localize.filter";
-
+  
 export default {
   name: 'HistoryTable.vue',
   data: () => ({
-    tooltip: localizeFilter('History_View_Record')
+    tooltip: 'History_View_Record'
   }),
   props: {
     records: {

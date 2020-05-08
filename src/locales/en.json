@@ -5,6 +5,8 @@
   "Message_EnterName": "Enter name",
   "Name": "Name",
   "Update": "Update",
+  "Record_With": "Record with",
+  "Not_Found": "not found",
   "Detail_Title": "Detail",
   "Menu_Bill": "Bill",
   "Menu_History": "History",
@@ -74,5 +76,9 @@
   "Register_Enter_Your_Name": "Enter your name",
   "Register_Agree_Rules": "I agree with the rules",
   "Register_Is_Account": "Is there already an account?",
-  "Register_Enter": "Enter!"
+  "Register_Enter": "Enter!",
+  "Detail_The_Amount": "The amount",
+  "Detail_Description": "Description",
+  "Detail_Category": "Category",
+  "Detail_History": "History"
 }

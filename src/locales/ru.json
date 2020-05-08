@@ -4,6 +4,8 @@
   "Log_Off": "Выйти",
   "Message_EnterName": "Введите имя",
   "Update": "Обновить",
+  "Record_With": "Запись с",
+  "Not_Found": "Не найдена",
   "Name": "Имя",
   "Detail_Title": "Запись",
   "Menu_Bill": "Счет",
@@ -74,5 +76,10 @@
   "Register_Enter_Your_Name": "Введите ваше имя",
   "Register_Agree_Rules": "С правилами согласен",
   "Register_Is_Account": "Уже есть аккаунт?",
-  "Register_Enter": "Войти!"
+  "Register_Enter": "Войти!",
+  "Detail_The_Amount": "Сумма",
+  "Detail_Description": "Описание",
+  "Detail_Category": "Категория",
+  "Detail_History": "История"
+
 }
